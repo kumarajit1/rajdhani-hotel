@@ -2,5 +2,6 @@ h1{
     background-color: black; 
     color: white; 
     font-weight: bold;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
