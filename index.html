@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rajdhani Hotels</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script type="text/javascript" src="javascript/yogi.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="container-fluid">
+    <h1 class="text-center border border-dark">Rajdhani Hotel</h1>
+        <div class="accordion" id="HotelRegister">
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#customer"  data-bs-toggle="collapse" class="btn btn-info w-100">Customer Info</button>
+                </div>
+                <div class="accordion-collapse show collapse" id="customer" data-bs-parent="#HotelRegister">
+                    <div class="accordion-body">
+                        <dl style="display: inline;">
+                            <dt>Customer Name</dt>
+                            <dd><input type="text" class="form-control w-100" id="txtName"></dd>
+                            <dt>Check in Date</dt>
+                            <dd><input type="date" class="from-control" id="chkDate"></dd>
+                            <dt>Total No od Days</dt>
+                            <dd><input type="number" class="form-control" id="numDay"></dd>
+                            <dt>Total No of Persons</dt>
+                            <dd><input type="number" class="form-control" id="numPerson"></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#room" data-bs-toggle="collapse" class="btn btn-info w-100">Select Room Type</button>
+                </div>
+                <div class="accordion-collapse collapse" id="room" data-bs-parent="#HotelRegister">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <img src="./images/roomglx.jpg" class="card-image-top" height="100">
+                                </div>
+                                <div class="card-body">
+                                    <h3>&#8377; 2500/-</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <input type="radio" class="form-check-input" name="Room" value="Delux room" id="optDelux">Delux room
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="./images/suiteroom.jpg" class="card-image-top" height="100">
+                                </div>
+                                <div class="card-body">
+                                    <h3>&#8377; 4000/-</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <input type="radio" class="form-check-input" name="Room" value="Suite room" id="optSuite">Suite room
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#ameniti" data-bs-toggle="collapse" class="btn btn-info w-100">Select amenities</button>
+                </div>
+                <div class="accordion-collapse collapse" id="ameniti" data-bs-parent="#HotelRegister">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <img src="./images/ac.jpg" class="card-image-top" height="150">
+                                </div>
+                                <div class="card-body">
+                                    <h3>&#8377; 1000/-</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <input type="checkbox" class="form-check-input" name="Ameniti" value="Ac" id="optAc">Ac
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="./images/locker.jpg" class="card-image-top" height="150">
+                                </div>
+                                <div class="card-body">
+                                    <h3>&#8377; 300/-</h3>
+                                </div>
+                                <div class="card-footer">
+                                    <input type="checkbox" class="form-check-input" name="Ameniti"  value="Locker" id="optLocker">Locker
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#amount" data-bs-toggle="collapse" class="btn btn-info w-100">Advance Amount</button>
+                </div>
+                <div class="accordion-collapse collapse" id="amount" data-bs-parent="#HotelRegister">
+                    <div class="d-flex justify-content-center">
+                        <h3>Advance Amount</h3>
+                        <div class="mt-1 ms-2 mb-1">
+                            <input type="number" class="form-control" value="Advance Amount" id="adAmount">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="margin-left: 600px;">
+                <button data-bs-target="#total" onclick="RegisterClick()" id="register" data-bs-toggle="modal" class="btn btn-danger w-25">Register</button>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="total">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Total</h2>
+                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body" >
+                        <dl class="row">
+                            <dt class="col-6">Customer Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</dt>
+                            <dd class="col-6" id="mdlName"></dd>
+                            <dt class="col-6">Check in Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</dt>
+                            <dd class="col-6" id="mdlDate"></dd>
+                            <dt class="col-6">Total No of Days &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</dt>
+                            <dd class="col-6"" id="mdlDay"></dd>
+                            <dt class="col-6">Total No of Persons &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</dt>
+                            <dd class="col-6" id="mdlPerson"></dd>
+                            <dt class="col-6">Room Type Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</dt>
+                            <dd class="col-6" id="mdlRoom"></dd>
+                            <dt class="col-6">Ameniti Name &nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</dt>
+                            <dd class="col-6" id="mdlAmeniti"></dd>
+                            <dt class="col-6">Advance Amount &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</dt>
+                            <dd class="col-6" id="mdlAdvance"></dd>
+                            <dt class="col-6">Balance Amount &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</dt>
+                            <dd class="col-6" id="mdlBalance"></dd>
+                        </dl>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-bs-dismiss="modal" class="btn btn-primary">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
