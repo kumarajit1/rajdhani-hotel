@@ -2,6 +2,26 @@ h1{
     background-color: black; 
     color: white; 
     font-weight: bold;
+    text-align: center;
+    
+}
+#ci,#sr,#sa,#aa{
+    width: 84rem;
+}
+dl{
+    display: inline;
+}
+#img1,#img2{
+    height: 200px;
+}
+#img3,#img4{
+    height: 150px;
+}
+#adv{
+    display: flex;
     justify-content: center;
-    align-items: center;
+}
+#register{
+    width: 10rem;
+    margin-left: 37rem;
 }

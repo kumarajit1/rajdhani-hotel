@@ -5,22 +5,22 @@
     <title>Rajdhani Hotels</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <script type="text/javascript" src="javascript/yogi.js"></script>
+    <script type="text/javascript" src="javascript/yogi.js"></script> 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="container-fluid">
-    <h1 class="border border-dark">Rajdhani Hotel</h1>
+    <h1 >Rajdhani Hotel</h1>
         <div class="accordion" id="HotelRegister">
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <button data-bs-target="#customer"  data-bs-toggle="collapse" class="btn btn-info w-100">Customer Info</button>
+                    <button data-bs-target="#customer" id="ci"  data-bs-toggle="collapse" class="btn btn-info">Customer Info</button>
                 </div>
                 <div class="accordion-collapse show collapse" id="customer" data-bs-parent="#HotelRegister">
                     <div class="accordion-body">
-                        <dl style="display: inline;">
+                        <dl>
                             <dt>Customer Name</dt>
-                            <dd><input type="text" class="form-control w-100" id="txtName"></dd>
+                            <dd><input type="text" class="form-control" id="txtName"></dd>
                             <dt>Check in Date</dt>
                             <dd><input type="date" class="from-control" id="chkDate"></dd>
                             <dt>Total No od Days</dt>
@@ -36,14 +36,14 @@
 
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <button data-bs-target="#room" data-bs-toggle="collapse" class="btn btn-info w-100">Select Room Type</button>
+                    <button data-bs-target="#room" id="sr" data-bs-toggle="collapse" class="btn btn-info">Select Room Type</button>
                 </div>
                 <div class="accordion-collapse collapse" id="room" data-bs-parent="#HotelRegister">
                     <div class="accordion-body">
                         <div class="row">
                             <div class="col">
                                 <div class="card">
-                                    <img src="./images/roomglx.jpg" class="card-image-top" height="100">
+                                    <img src="./images/roomglx.jpg" id="img1" class="card-image-top">
                                 </div>
                                 <div class="card-body">
                                     <h3>&#8377; 2500/-</h3>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col">
                                 <div class="card">
-                                    <img src="./images/suiteroom.jpg" class="card-image-top" height="100">
+                                    <img src="./images/suiteroom.jpg" id="img2" class="card-image-top">
                                 </div>
                                 <div class="card-body">
                                     <h3>&#8377; 4000/-</h3>
@@ -71,14 +71,14 @@
 
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <button data-bs-target="#ameniti" data-bs-toggle="collapse" class="btn btn-info w-100">Select amenities</button>
+                    <button data-bs-target="#ameniti" id="sa" data-bs-toggle="collapse" class="btn btn-info">Select amenities</button>
                 </div>
                 <div class="accordion-collapse collapse" id="ameniti" data-bs-parent="#HotelRegister">
                     <div class="accordion-body">
                         <div class="row">
                             <div class="col">
                                 <div class="card">
-                                    <img src="./images/ac.jpg" class="card-image-top" height="150">
+                                    <img src="./images/ac.jpg" class="card-image-top" id="img3">
                                 </div>
                                 <div class="card-body">
                                     <h3>&#8377; 1000/-</h3>
@@ -89,7 +89,7 @@
                             </div>
                             <div class="col">
                                 <div class="card">
-                                    <img src="./images/locker.jpg" class="card-image-top" height="150">
+                                    <img src="./images/locker.jpg" class="card-image-top" id="img4">
                                 </div>
                                 <div class="card-body">
                                     <h3>&#8377; 300/-</h3>
@@ -107,10 +107,10 @@
 
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <button data-bs-target="#amount" data-bs-toggle="collapse" class="btn btn-info w-100">Advance Amount</button>
+                    <button data-bs-target="#amount" id="aa" data-bs-toggle="collapse" class="btn btn-info">Advance Amount</button>
                 </div>
                 <div class="accordion-collapse collapse" id="amount" data-bs-parent="#HotelRegister">
-                    <div class="d-flex justify-content-center">
+                    <div id="adv">
                         <h3>Advance Amount</h3>
                         <div class="mt-1 ms-2 mb-1">
                             <input type="number" class="form-control" value="Advance Amount" id="adAmount">
@@ -120,8 +120,8 @@
             </div>
 
 
-            <div style="margin-left: 600px;">
-                <button data-bs-target="#total" onclick="RegisterClick()" id="register" data-bs-toggle="modal" class="btn btn-danger w-25">Register</button>
+            <div>
+                <button data-bs-target="#total" onclick="RegisterClick()" id="register" data-bs-toggle="modal" class="btn btn-danger">Register</button>
             </div>
         </div>
 
